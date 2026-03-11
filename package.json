@@ -1,0 +1,22 @@
+{
+  "name": "@rently-team/ria-chat-sdk",
+  "version": "1.0.0",
+  "description": "RIA Chatbot SDK - Reusable AI chatbot UI components for Rently apps",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "peerDependencies": {
+    "@gorhom/bottom-sheet": ">=5.0.0",
+    "@livekit/react-native": ">=2.0.0",
+    "@react-native-community/blur": ">=4.0.0",
+    "livekit-client": ">=2.0.0",
+    "react": ">=18.0.0",
+    "react-native": ">=0.72.0",
+    "react-native-gesture-handler": ">=2.0.0",
+    "react-native-linear-gradient": ">=2.0.0",
+    "react-native-reanimated": ">=3.0.0",
+    "react-redux": ">=8.0.0",
+    "redux": ">=4.0.0",
+    "redux-saga": ">=1.0.0"
+  },
+  "license": "UNLICENSED"
+}
