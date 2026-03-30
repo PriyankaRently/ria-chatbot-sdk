@@ -5,7 +5,7 @@ import { TChatMessageType } from "../store/reducer";
 import { toggleMessageLikeAction, updateMessageLikeAction } from "../store/actions";
 import { CHATBOT_USER_ENUM } from "../constants";
 import { HEAP_RIA_CHATBOT_EVENTS } from "../constants/heapEvents";
-import { useRiaChatSDK } from "../context/RiaChatSDKContext";
+import { useRiaChatBotSDK } from "../context/RiaChatBotSDKContext";
 
  
 interface LikeButtonProps {
@@ -23,7 +23,7 @@ const LikeButton = ({
   iconName,
   style,
 }: LikeButtonProps): JSX.Element => {
-  const { components, theme, scaling } = useRiaChatSDK();
+  const { components, theme, scaling } = useRiaChatBotSDK();
   const { RDPressableOpacity, RDHeroIcon } = components;
   const { colors, spacings } = theme;
   const { hs } = scaling;
@@ -59,7 +59,7 @@ export const LiveAgentMessageText = ({
 }: {
   message: TChatMessageType;
 }): JSX.Element => {
-  const { components, theme, assets } = useRiaChatSDK();
+  const { components, theme, assets } = useRiaChatBotSDK();
   const { RDText } = components;
   const TextStyleFromMarkup = components.TextStyleFromMarkup;
   const { colors, spacings } = theme;
@@ -94,7 +94,7 @@ export const AIChatMessageText = ({
 }: {
   message: TChatMessageType;
 }): JSX.Element => {
-  const { components, theme, assets, trackEvent } = useRiaChatSDK();
+  const { components, theme, assets, trackEvent } = useRiaChatBotSDK();
   const { RDText } = components;
   const TextStyleFromMarkup = components.TextStyleFromMarkup;
   const { colors, spacings } = theme;
@@ -157,7 +157,7 @@ export const UserChatMessageText = ({
 }: {
   message: TChatMessageType;
 }): JSX.Element => {
-  const { components, theme } = useRiaChatSDK();
+  const { components, theme } = useRiaChatBotSDK();
   const { RDBadge } = components;
   const { colors, spacings } = theme;
 

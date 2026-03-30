@@ -15,7 +15,7 @@ import {
   setLiveAgentToAIHandoffAction,
 } from "../store/actions";
 import { COMMUNITY_TYPE_TO_PROPERTY_TYPE } from "../constants";
-import { useRiaChatSDK, useExternalState } from "../context/RiaChatSDKContext";
+import { useRiaChatBotSDK, useExternalState } from "../context/RiaChatBotSDKContext";
 
 /**
  * General-purpose hook for managing chatbot-related context and interactions.
@@ -25,7 +25,7 @@ import { useRiaChatSDK, useExternalState } from "../context/RiaChatSDKContext";
 export const useChatbotContext = ({ rawDataFromAI, screenName }: { rawDataFromAI: any; screenName: string }) => {
   const room = useRoomContext();
   const dispatch = useDispatch();
-  const { navigation, storage, logger, onSearchFromAI } = useRiaChatSDK();
+  const { navigation, storage, logger, onSearchFromAI } = useRiaChatBotSDK();
   const externalState = useExternalState();
 
   const prospectId = externalState.prospectId;

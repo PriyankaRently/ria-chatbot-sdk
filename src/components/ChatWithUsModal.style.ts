@@ -1,9 +1,9 @@
 import { StyleSheet, TextStyle, ViewStyle } from "react-native";
-import { RiaChatSDKTheme, RiaChatSDKScaling } from "../context/types";
+import { RiaChatBotSDKTheme, RiaChatBotSDKScaling } from "../context/types";
 
 export const createChatWithUsModalStyles = (
-  theme: RiaChatSDKTheme,
-  scaling: RiaChatSDKScaling
+  theme: RiaChatBotSDKTheme,
+  scaling: RiaChatBotSDKScaling
 ) => {
   const { colors, spacings } = theme;
   const { hs, vs } = scaling;

@@ -1,18 +1,18 @@
 // Context & Provider
-export { RiaChatSDKProvider, useRiaChatSDK, useExternalState } from "./context/RiaChatSDKContext";
+export { RiaChatBotSDKProvider, useRiaChatBotSDK, useExternalState } from "./context/RiaChatBotSDKContext";
 export type {
-  RiaChatSDKConfig,
-  RiaChatSDKComponents,
-  RiaChatSDKTheme,
-  RiaChatSDKScaling,
-  RiaChatSDKApi,
-  RiaChatSDKServiceConfig,
-  RiaChatSDKLogger,
-  RiaChatSDKDateUtils,
-  RiaChatSDKAssets,
-  RiaChatSDKNavigation,
-  RiaChatSDKStorage,
-  RiaChatSDKExternalState,
+  RiaChatBotSDKConfig,
+  RiaChatBotSDKComponents,
+  RiaChatBotSDKTheme,
+  RiaChatBotSDKScaling,
+  RiaChatBotSDKApi,
+  RiaChatBotSDKServiceConfig,
+  RiaChatBotSDKLogger,
+  RiaChatBotSDKDateUtils,
+  RiaChatBotSDKAssets,
+  RiaChatBotSDKNavigation,
+  RiaChatBotSDKStorage,
+  RiaChatBotSDKExternalState,
 } from "./context/types";
 
 // Store

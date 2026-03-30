@@ -3,7 +3,7 @@ import { Image, ImageStyle, StyleSheet, ViewStyle, View } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 import { showChatWithUsModalAction } from "../store/actions";
 import { HEAP_RIA_CHATBOT_EVENTS } from "../constants/heapEvents";
-import { useRiaChatSDK } from "../context/RiaChatSDKContext";
+import { useRiaChatBotSDK } from "../context/RiaChatBotSDKContext";
 import Animated, {
   useSharedValue,
   useAnimatedStyle,
@@ -30,7 +30,7 @@ export const ChatWidgetIcon = ({
   enableShineAnimation = true,
 }: ChatWidgetIconProps): JSX.Element | null => {
   const dispatch = useDispatch();
-  const { components, trackEvent, assets } = useRiaChatSDK();
+  const { components, trackEvent, assets } = useRiaChatBotSDK();
   const { RDPressableOpacity } = components;
 
   const showChatWithUsModal = useSelector(

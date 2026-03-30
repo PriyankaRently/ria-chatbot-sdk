@@ -1,13 +1,13 @@
 import React, { JSX } from "react";
 import { View, StyleSheet, ViewStyle } from "react-native";
-import { useRiaChatSDK } from "../context/RiaChatSDKContext";
+import { useRiaChatBotSDK } from "../context/RiaChatBotSDKContext";
 
 interface TChatbotBadgeProps {
   timeExceeded: boolean;
 }
 
 export const LiveAgentHandoffBadge = ({ timeExceeded }: TChatbotBadgeProps): JSX.Element => {
-  const { components, theme } = useRiaChatSDK();
+  const { components, theme } = useRiaChatBotSDK();
   const { RDText, RDHeroIcon } = components;
   const { colors, spacings } = theme;
 
@@ -40,7 +40,7 @@ export const LiveAgentHandoffBadge = ({ timeExceeded }: TChatbotBadgeProps): JSX
 };
 
 export const NoNetworkBadge = (): JSX.Element => {
-  const { components, theme } = useRiaChatSDK();
+  const { components, theme } = useRiaChatBotSDK();
   const { RDText, RDHeroIcon } = components;
   const { colors, spacings } = theme;
 

@@ -1,7 +1,7 @@
 import React, { JSX } from "react";
 import { View, StyleSheet, TextStyle, ViewStyle } from "react-native";
 import LinearGradient from "react-native-linear-gradient";
-import { useRiaChatSDK } from "../context/RiaChatSDKContext";
+import { useRiaChatBotSDK } from "../context/RiaChatBotSDKContext";
 
 interface TPopupBubbleTextProps {
   text: string;
@@ -13,7 +13,7 @@ interface TPopupBubbleTextProps {
  * Uses a linear gradient background for the bubble border.
  */
 export const PopupBubbleText = ({ text, style = {} }: TPopupBubbleTextProps): JSX.Element => {
-  const { components, theme, scaling } = useRiaChatSDK();
+  const { components, theme, scaling } = useRiaChatBotSDK();
   const { RDText } = components;
   const { colors, spacings } = theme;
   const { vs } = scaling;

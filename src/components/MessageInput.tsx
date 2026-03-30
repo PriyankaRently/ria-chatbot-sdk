@@ -12,7 +12,7 @@ import { CHATBOT_USER_ENUM } from "../constants";
 import { TChatMessageType } from "../store/reducer";
 import { generateRandomKey } from "../utils/chatbotHelperFunctions";
 import { HEAP_RIA_CHATBOT_EVENTS } from "../constants/heapEvents";
-import { useRiaChatSDK, useExternalState } from "../context/RiaChatSDKContext";
+import { useRiaChatBotSDK, useExternalState } from "../context/RiaChatBotSDKContext";
 
 interface TMessageInputProps {
   onInputFocus: () => void;
@@ -33,7 +33,7 @@ export const MessageInput = ({
   const { isLiveAgentConnected, chatSessionId, connectedToRoom } = useSelector(
     (state: any) => state.riaChatBot
   );
-  const { components, theme, scaling, trackEvent, dateUtils } = useRiaChatSDK();
+  const { components, theme, scaling, trackEvent, dateUtils } = useRiaChatBotSDK();
   const { RDBadge, RDPressableOpacity } = components;
   const { colors, spacings } = theme;
   const { vs } = scaling;

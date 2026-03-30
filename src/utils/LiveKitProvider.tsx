@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { LiveKitRoom } from "@livekit/react-native";
-import { useRiaChatSDK, useExternalState } from "../context/RiaChatSDKContext";
+import { useRiaChatBotSDK, useExternalState } from "../context/RiaChatBotSDKContext";
 import { HEAP_RIA_CHATBOT_EVENTS } from "../constants/heapEvents";
 import {
   checkPreviousChatSessionAction,
@@ -27,7 +27,7 @@ interface LiveKitProviderProps {
 export const LiveKitProvider = ({
   children,
 }: LiveKitProviderProps): React.ReactElement => {
-  const sdkConfig = useRiaChatSDK();
+  const sdkConfig = useRiaChatBotSDK();
   const { trackEvent, serviceConfig } = sdkConfig;
 
   const { authKey } = useExternalState();

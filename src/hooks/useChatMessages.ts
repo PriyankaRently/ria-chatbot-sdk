@@ -5,7 +5,7 @@ import { CHATBOT_USER_ENUM, TYPING_CONSTANT } from "../constants";
 import { useChat, useRoomContext } from "@livekit/react-native";
 import { ConnectionState } from "livekit-client";
 import { TChatMessageType } from "../store/reducer";
-import { useRiaChatSDK } from "../context/RiaChatSDKContext";
+import { useRiaChatBotSDK } from "../context/RiaChatBotSDKContext";
 
 /**
  * Custom hook to manage chat messages and typing state for the chatbot.
@@ -22,7 +22,7 @@ export const useChatMessages = () => {
   );
   const [isTyping, setIsTyping] = useState(false);
   const typingTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const { dateUtils } = useRiaChatSDK();
+  const { dateUtils } = useRiaChatBotSDK();
 
   // Storing message sent by local user to redux
   useEffect(() => {

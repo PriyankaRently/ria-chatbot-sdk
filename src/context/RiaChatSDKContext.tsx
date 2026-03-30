@@ -1,18 +1,18 @@
 import React, { createContext, useContext } from "react";
-import type { RiaChatSDKConfig, RiaChatSDKExternalState } from "./types";
+import type { RiaChatBotSDKConfig, RiaChatBotSDKExternalState } from "./types";
 import { useSelector } from "react-redux";
 import { setSDKConfig } from "../store/sdkConfig";
 
-const RiaChatSDKContext = createContext<RiaChatSDKConfig | null>(null);
+const RiaChatBotSDKContext = createContext<RiaChatBotSDKConfig | null>(null);
 
 /**
  * Hook to access the SDK configuration context.
- * Must be called within a RiaChatSDKProvider.
+ * Must be called within a RiaChatBotSDKProvider.
  */
-export const useRiaChatSDK = (): RiaChatSDKConfig => {
-  const ctx = useContext(RiaChatSDKContext);
+export const useRiaChatBotSDK = (): RiaChatBotSDKConfig => {
+  const ctx = useContext(RiaChatBotSDKContext);
   if (!ctx) {
-    throw new Error("useRiaChatSDK must be used within a <RiaChatSDKProvider>");
+    throw new Error("useRiaChatBotSDK must be used within a <RiaChatBotSDKProvider>");
   }
   return ctx;
 };
@@ -21,18 +21,18 @@ export const useRiaChatSDK = (): RiaChatSDKConfig => {
  * Hook to access the external app state provided by the host app.
  * Uses the externalStateSelector from the SDK config.
  */
-export const useExternalState = (): RiaChatSDKExternalState => {
-  const { externalStateSelector } = useRiaChatSDK();
+export const useExternalState = (): RiaChatBotSDKExternalState => {
+  const { externalStateSelector } = useRiaChatBotSDK();
   return useSelector(externalStateSelector);
 };
 
-interface RiaChatSDKProviderProps {
-  config: RiaChatSDKConfig;
+interface RiaChatBotSDKProviderProps {
+  config: RiaChatBotSDKConfig;
   children: React.ReactNode;
 }
 
 /**
- * RiaChatSDKProvider - Wraps the app to provide SDK configuration.
+ * RiaChatBotSDKProvider - Wraps the app to provide SDK configuration.
  *
  * The host app must wrap its component tree with this provider and pass
  * all required configuration (theme, API functions, assets, etc.).
@@ -40,16 +40,16 @@ interface RiaChatSDKProviderProps {
  * This provider also sets a module-level config reference so that
  * non-React code (sagas) can access the config.
  */
-export const RiaChatSDKProvider = ({
+export const RiaChatBotSDKProvider = ({
   config,
   children,
-}: RiaChatSDKProviderProps): React.ReactElement => {
+}: RiaChatBotSDKProviderProps): React.ReactElement => {
   // Set the module-level config for non-React code (sagas)
   setSDKConfig(config);
 
   return (
-    <RiaChatSDKContext.Provider value={config}>
+    <RiaChatBotSDKContext.Provider value={config}>
       {children}
-    </RiaChatSDKContext.Provider>
+    </RiaChatBotSDKContext.Provider>
   );
 };

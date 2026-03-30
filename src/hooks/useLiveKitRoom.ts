@@ -17,7 +17,7 @@ import {
 } from "../store/actions";
 import { useRoomContext } from "@livekit/react-native";
 import { HEAP_RIA_CHATBOT_EVENTS } from "../constants/heapEvents";
-import { useRiaChatSDK, useExternalState } from "../context/RiaChatSDKContext";
+import { useRiaChatBotSDK, useExternalState } from "../context/RiaChatBotSDKContext";
 
 /**
  * Custom hook to manage LiveKit room interactions for the chatbot.
@@ -28,7 +28,7 @@ import { useRiaChatSDK, useExternalState } from "../context/RiaChatSDKContext";
 export const useLiveKitRoom = () => {
   const dispatch = useDispatch();
   const room = useRoomContext();
-  const { trackEvent, dateUtils, onSearchFromAI } = useRiaChatSDK();
+  const { trackEvent, dateUtils, onSearchFromAI } = useRiaChatBotSDK();
   const externalState = useExternalState();
   const authKey = externalState.authKey;
   const fullname = externalState.fullname ?? "";

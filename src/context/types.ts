@@ -4,7 +4,7 @@ import React from "react";
  * Theme component interfaces expected by the SDK.
  * The host app provides its own design system components matching these signatures.
  */
-export interface RiaChatSDKComponents {
+export interface RiaChatBotSDKComponents {
   RDText: React.ComponentType<any>;
   RDButton: React.ComponentType<any>;
   RDButtonContainer: React.ComponentType<any>;
@@ -17,7 +17,7 @@ export interface RiaChatSDKComponents {
 /**
  * Theme tokens expected by the SDK.
  */
-export interface RiaChatSDKTheme {
+export interface RiaChatBotSDKTheme {
   colors: Record<string, any>;
   spacings: Record<string, any>;
 }
@@ -25,7 +25,7 @@ export interface RiaChatSDKTheme {
 /**
  * Scaling functions for responsive sizing.
  */
-export interface RiaChatSDKScaling {
+export interface RiaChatBotSDKScaling {
   hs: (size: number) => number;
   vs: (size: number) => number;
 }
@@ -33,7 +33,7 @@ export interface RiaChatSDKScaling {
 /**
  * API functions the SDK uses to make network requests.
  */
-export interface RiaChatSDKApi {
+export interface RiaChatBotSDKApi {
   fetchAPI: (params: any, options?: any) => Promise<any>;
   fetchMFDAPI: (params: any) => Promise<any>;
 }
@@ -41,7 +41,7 @@ export interface RiaChatSDKApi {
 /**
  * Configuration URLs and keys for external services.
  */
-export interface RiaChatSDKServiceConfig {
+export interface RiaChatBotSDKServiceConfig {
   gilfoyleBaseUrl: string;
   liveKitWebSocketUrl: string;
   chatWootWSUrl: string;
@@ -51,7 +51,7 @@ export interface RiaChatSDKServiceConfig {
 /**
  * Logger interface.
  */
-export interface RiaChatSDKLogger {
+export interface RiaChatBotSDKLogger {
   log: (...args: any[]) => void;
   error: (...args: any[]) => void;
 }
@@ -59,7 +59,7 @@ export interface RiaChatSDKLogger {
 /**
  * Date utility functions.
  */
-export interface RiaChatSDKDateUtils {
+export interface RiaChatBotSDKDateUtils {
   getCurrentDateTime: (format: string) => string;
   formatISOToLocal: (isoString: string, format: string) => string;
 }
@@ -67,7 +67,7 @@ export interface RiaChatSDKDateUtils {
 /**
  * Image asset sources (result of require() calls).
  */
-export interface RiaChatSDKAssets {
+export interface RiaChatBotSDKAssets {
   rentlyIcon: any;
   chatWidgetIcon: any;
   rentlyChatIcon: any;
@@ -76,7 +76,7 @@ export interface RiaChatSDKAssets {
 /**
  * Navigation callbacks for the SDK to trigger host app navigation.
  */
-export interface RiaChatSDKNavigation {
+export interface RiaChatBotSDKNavigation {
   navigateToSearch: (params: any) => void;
   popToTop: () => void;
 }
@@ -84,7 +84,7 @@ export interface RiaChatSDKNavigation {
 /**
  * Storage interface for persisting key-value data.
  */
-export interface RiaChatSDKStorage {
+export interface RiaChatBotSDKStorage {
   get: (key: string) => string | undefined;
   set: (key: string, value: string) => void;
 }
@@ -93,7 +93,7 @@ export interface RiaChatSDKStorage {
  * External app state that the SDK needs from the host app's Redux store.
  * The host app provides a selector function that extracts this from its root state.
  */
-export interface RiaChatSDKExternalState {
+export interface RiaChatBotSDKExternalState {
   authKey: string | null;
   prospectId: string | number | null;
   email: string;
@@ -125,42 +125,42 @@ export type OnSearchFromAI = (params: { address: string }) => void;
 /**
  * Full configuration object for the RIA Chat SDK.
  */
-export interface RiaChatSDKConfig {
+export interface RiaChatBotSDKConfig {
   /** Design system UI components */
-  components: RiaChatSDKComponents;
+  components: RiaChatBotSDKComponents;
 
   /** Theme tokens (colors, spacings) */
-  theme: RiaChatSDKTheme;
+  theme: RiaChatBotSDKTheme;
 
   /** Responsive scaling functions */
-  scaling: RiaChatSDKScaling;
+  scaling: RiaChatBotSDKScaling;
 
   /** API call functions */
-  api: RiaChatSDKApi;
+  api: RiaChatBotSDKApi;
 
   /** Service configuration (URLs, keys) */
-  serviceConfig: RiaChatSDKServiceConfig;
+  serviceConfig: RiaChatBotSDKServiceConfig;
 
   /** Logger */
-  logger: RiaChatSDKLogger;
+  logger: RiaChatBotSDKLogger;
 
   /** Analytics tracking function */
   trackEvent: (eventName: string, properties?: Record<string, any>) => void;
 
   /** Date formatting utilities */
-  dateUtils: RiaChatSDKDateUtils;
+  dateUtils: RiaChatBotSDKDateUtils;
 
   /** Image assets */
-  assets: RiaChatSDKAssets;
+  assets: RiaChatBotSDKAssets;
 
   /** Navigation callbacks */
-  navigation: RiaChatSDKNavigation;
+  navigation: RiaChatBotSDKNavigation;
 
   /** Persistent storage */
-  storage: RiaChatSDKStorage;
+  storage: RiaChatBotSDKStorage;
 
   /** Selector that extracts external app state from the host Redux store */
-  externalStateSelector: (state: any) => RiaChatSDKExternalState;
+  externalStateSelector: (state: any) => RiaChatBotSDKExternalState;
 
   /** Callback when AI requests a property search */
   onSearchFromAI: OnSearchFromAI;

@@ -9,7 +9,7 @@ import {
   TextStyle,
 } from "react-native";
 import { useSelector } from "react-redux";
-import { useRiaChatSDK } from "../context/RiaChatSDKContext";
+import { useRiaChatBotSDK } from "../context/RiaChatBotSDKContext";
 
 interface TChatbotLoaderProps {
   style?: ViewStyle;
@@ -20,7 +20,7 @@ export const ChatbotLoader = ({ style }: TChatbotLoaderProps): JSX.Element => {
   const { showChatbotLoadingMessage } = useSelector(
     (state: any) => state.riaChatBot
   );
-  const { components, theme, assets } = useRiaChatSDK();
+  const { components, theme, assets } = useRiaChatBotSDK();
   const { RDText } = components;
   const { spacings } = theme;
 

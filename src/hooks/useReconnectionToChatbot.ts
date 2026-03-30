@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { getLivekitTokenAction } from "../store/actions";
-import { useExternalState } from "../context/RiaChatSDKContext";
+import { useExternalState } from "../context/RiaChatBotSDKContext";
 
 /**
  * Custom hook to manage reconnection logic to the chatbot.

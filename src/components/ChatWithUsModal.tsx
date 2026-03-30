@@ -32,7 +32,7 @@ import { useLiveAgent } from "../hooks/useLiveAgent";
 import { AiDisclaimer } from "./AiDisclaimer";
 import { HEAP_RIA_CHATBOT_EVENTS } from "../constants/heapEvents";
 import { CHATBOT_USER_ENUM } from "../constants";
-import { useRiaChatSDK, useExternalState } from "../context/RiaChatSDKContext";
+import { useRiaChatBotSDK, useExternalState } from "../context/RiaChatBotSDKContext";
 import { ScrollView } from "react-native-gesture-handler";
 import { BlurView } from "@react-native-community/blur";
 import { MessageInput } from "./MessageInput";
@@ -43,7 +43,7 @@ import { TypingDots } from "./TypingDotsComponent";
  */
 export const ChatWithUsModal = (): JSX.Element => {
   const dispatch = useDispatch();
-  const { components, theme, scaling, trackEvent } = useRiaChatSDK();
+  const { components, theme, scaling, trackEvent } = useRiaChatBotSDK();
   const { RDText, RDButton, RDButtonContainer, RDHeroIcon, RDPressableOpacity, RDBadge } =
     components;
   const { colors, spacings } = theme;

@@ -7,7 +7,7 @@ import Animated, {
   withRepeat,
   withDelay,
 } from "react-native-reanimated";
-import { useRiaChatSDK } from "../context/RiaChatSDKContext";
+import { useRiaChatBotSDK } from "../context/RiaChatBotSDKContext";
 
 interface TypingDotsProps {
   dotColor?: string;
@@ -20,7 +20,7 @@ export const TypingDots = ({
   animationDuration = 1500,
   textStyle = {},
 }: TypingDotsProps = {}) => {
-  const { components, theme } = useRiaChatSDK();
+  const { components, theme } = useRiaChatBotSDK();
   const { RDText } = components;
   const { colors, spacings } = theme;
 

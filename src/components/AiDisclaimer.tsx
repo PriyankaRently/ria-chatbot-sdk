@@ -1,14 +1,14 @@
 import React, { JSX } from "react";
 import { TextStyle, ViewStyle, Linking, View, StyleSheet } from "react-native";
 import { useSelector } from "react-redux";
-import { useRiaChatSDK } from "../context/RiaChatSDKContext";
+import { useRiaChatBotSDK } from "../context/RiaChatBotSDKContext";
 
 interface AiDisclaimerProps {
   showDisclaimer?: boolean;
 }
 
 export const AiDisclaimer = ({ showDisclaimer }: AiDisclaimerProps): JSX.Element | null => {
-  const { components, theme } = useRiaChatSDK();
+  const { components, theme } = useRiaChatBotSDK();
   const { RDText } = components;
   const { colors, spacings } = theme;
   const { previousChatSession, chatMessages } = useSelector(

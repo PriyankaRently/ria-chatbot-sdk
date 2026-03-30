@@ -13,7 +13,7 @@ import {
 import { TChatMessageType } from "../store/reducer";
 import { publishDataToRoom } from "../utils/chatbotHelperFunctions";
 import { HEAP_RIA_CHATBOT_EVENTS } from "../constants/heapEvents";
-import { useRiaChatSDK } from "../context/RiaChatSDKContext";
+import { useRiaChatBotSDK } from "../context/RiaChatBotSDKContext";
 
 /**
  * Custom hook to manage live agent handoff logic, Chatwoot WebSocket connection,
@@ -35,7 +35,7 @@ export const useLiveAgent = () => {
   const [liveagentTimeExceeded, setLiveAgentTimeExceeded] = useState(false);
   const dispatch = useDispatch();
   const room = useRoomContext();
-  const { trackEvent } = useRiaChatSDK();
+  const { trackEvent } = useRiaChatBotSDK();
 
   // Handle incoming messages from live agent
   const onMessage = useCallback(
